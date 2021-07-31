@@ -1,0 +1,12 @@
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  strong-mode:
+    implicit-casts: false
+  errors:
+    import_of_legacy_library_into_null_safe: ignore
+
+linter:
+  rules:
+    sort_pub_dependencies: false
+    avoid_print: false
