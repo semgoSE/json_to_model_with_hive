@@ -62,8 +62,6 @@ import '${indexPathPrefix}index.dart';
 
 part '$fileName.g.dart';
 
-$imports
-
 ''';
   }
 
