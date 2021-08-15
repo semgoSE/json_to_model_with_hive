@@ -64,7 +64,7 @@ class JsonModelRunner {
           final fileName = basenameString.first;
           final fileRead = file.readAsStringSync();
           Map<String, dynamic> jsonMap;
-          if(!fileRead.contains("#hive")) {
+          if(fileRead.contains("#hive")) {
             jsonMap = json.decode(fileRead.split("hive")[1]) as Map<String, dynamic>;
           } else {
             jsonMap = json.decode(file.readAsStringSync()) as Map<String, dynamic>;
