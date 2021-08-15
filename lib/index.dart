@@ -62,7 +62,14 @@ class JsonModelRunner {
               );
           final basenameString = path.basename(f.path).split('.');
           final fileName = basenameString.first;
-          final jsonMap = json.decode(file.readAsStringSync()) as Map<String, dynamic>;
+          final fileRead = file.readAsStringSync();
+          Map<String, dynamic> jsonMap;
+          if(!fileRead.contains("#hive")) {
+            jsonMap = json.decode(fileRead.split("hive")[1]) as Map<String, dynamic>;
+          } else {
+            jsonMap = json.decode(file.readAsStringSync()) as Map<String, dynamic>;
+          }
+
           final relative = dartPath.replaceFirst(_distDir + path.separator, '').replaceAll(path.separator, '/');
           final jsonModel = JsonModel.fromMap(
             fileName,
