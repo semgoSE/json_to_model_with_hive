@@ -60,15 +60,15 @@ import 'package:flutter/foundation.dart';
 import 'package:quiver/core.dart';
 import '${indexPathPrefix}index.dart';
 
-part '$fileName.g.dart';
-
 ''';
   }
 
   if(index != null) {
     template += '''
+part '$fileName.g.dart';
 @immutable
 @HiveType(typeId: $index)
+
 ''';
   }
 
